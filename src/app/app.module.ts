@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome';
@@ -11,11 +10,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { HomeComponent } from './home/home.component';
+import {ChatBuddyRoutingModule} from "./chat-buddy-routing.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     HttpModule,
     MaterialModule,
     Angular2FontawesomeModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ChatBuddyRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

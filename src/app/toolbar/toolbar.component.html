@@ -1,3 +1,11 @@
-<p>
-  toolbar works!
-</p>
+<md-toolbar color="primary">
+  <fa [name]="'users'" [size]="3"></fa>
+  <div class="divider"></div>
+  <span class="underlineOnMouseOver" routerLink="/">ChatBuddy</span>
+
+  <span class="fill-remaining-space" ></span>
+  <span>{{TitleOfCurrentPage}}</span>
+  <span class="fill-remaining-space" ></span>
+  <button routerLink="/" md-button>Sign in</button>
+  <button routerLink="/" md-button>Register</button>
+</md-toolbar>
