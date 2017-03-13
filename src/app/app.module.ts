@@ -18,7 +18,6 @@ export const firebaseConfig = {
   databaseURL: "https://cp2test-f105d.firebaseio.com",
   storageBucket: "cp2test-f105d.appspot.com",
   messagingSenderId: "162855485996"
-
 };
 export const firebarebaseLoginConfig =  {
   provider: AuthProviders.Password,
