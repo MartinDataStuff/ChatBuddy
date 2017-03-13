@@ -2,3 +2,13 @@
   width:5px;
   display:inline-block;
 }
+
+.underlineOnMouseOver:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+

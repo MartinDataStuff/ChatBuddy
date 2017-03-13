@@ -1,11 +1,37 @@
 <md-toolbar color="primary">
-  <fa [name]="'users'" [size]="3"></fa>
+  <fa [name]="'users'" [size]="2"></fa>
   <div class="divider"></div>
   <span class="underlineOnMouseOver" routerLink="/">ChatBuddy</span>
 
   <span class="fill-remaining-space" ></span>
   <span>{{TitleOfCurrentPage}}</span>
   <span class="fill-remaining-space" ></span>
-  <button routerLink="/" md-button>Sign in</button>
-  <button routerLink="/" md-button>Register</button>
+
+  <button md-icon-button [mdMenuTriggerFor]="menu">
+    <fa [name]="'bars'" [size]="2"></fa>
+  </button>
+  <md-menu #menu="mdMenu">
+    <button md-menu-item routerLink="/">
+      <fa [name]="'sign-in'"></fa>
+      <span>Login</span>
+    </button>
+    <button md-menu-item routerLink="/" disabled>
+      <fa [name]="'user-plus'"></fa>
+      <span>Register</span>
+    </button>
+    <button md-menu-item routerLink="/">
+      <fa [name]="'comments'"></fa>
+      <span>Lobby</span>
+    </button>
+    <button md-menu-item routerLink="/">
+      <fa [name]="'pencil'"></fa>
+      <span>Contact</span>
+    </button>
+    <button md-menu-item routerLink="/">
+      <fa [name]="'info'"></fa>
+      <span>About</span>
+    </button>
+  </md-menu>
 </md-toolbar>
+
+
