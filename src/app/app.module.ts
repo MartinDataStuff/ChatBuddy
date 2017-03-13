@@ -7,12 +7,27 @@ import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
 
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+<<<<<<< HEAD
 import { HomeComponent } from './home/home.component';
 import {ChatBuddyRoutingModule} from "./chat-buddy-routing.module";
+=======
+export const firebaseConfig = {
+  apiKey: "AIzaSyAdO4NXTo52JDsXs6YG-IdjUFlXjaRfv0M",
+  authDomain: "cp2test-f105d.firebaseapp.com",
+  databaseURL: "https://cp2test-f105d.firebaseio.com",
+  storageBucket: "cp2test-f105d.appspot.com",
+  messagingSenderId: "162855485996"
+>>>>>>> e7422341ffeb8a9a4c6ff1591337d7df26d96214
 
+};
+export const firebarebaseLoginConfig =  {
+  provider: AuthProviders.Password,
+  method: AuthMethods.Password
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +41,11 @@ import {ChatBuddyRoutingModule} from "./chat-buddy-routing.module";
     MaterialModule,
     Angular2FontawesomeModule,
     FlexLayoutModule,
+<<<<<<< HEAD
     ChatBuddyRoutingModule
+=======
+    AngularFireModule.initializeApp(firebaseConfig, firebarebaseLoginConfig)
+>>>>>>> e7422341ffeb8a9a4c6ff1591337d7df26d96214
   ],
   providers: [],
   bootstrap: [AppComponent]
