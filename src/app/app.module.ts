@@ -14,6 +14,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 
 import { HomeComponent } from './home/home.component';
 import {ChatBuddyRoutingModule} from "./chat-buddy-routing.module";
+import { LobbyComponent } from './lobby/lobby/lobby.component';
+import { LoginComponent } from './facebook-auth/login/login.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAdO4NXTo52JDsXs6YG-IdjUFlXjaRfv0M",
@@ -30,7 +32,9 @@ export const firebarebaseLoginConfig =  {
   declarations: [
     AppComponent,
     ToolbarComponent,
-    HomeComponent
+    HomeComponent,
+    LobbyComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
