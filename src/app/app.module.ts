@@ -18,6 +18,7 @@ import { LobbyComponent } from './lobby/lobby/lobby.component';
 import { LoginComponent } from './facebook-auth/login/login.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { ChatroomComponent } from './chat-room/chatroom/chatroom.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAdO4NXTo52JDsXs6YG-IdjUFlXjaRfv0M",
@@ -39,6 +40,7 @@ export const firebarebaseLoginConfig =  {
     LoginComponent,
     AboutComponent,
     ContactComponent,
+    ChatroomComponent,
   ],
   imports: [
     BrowserModule,
