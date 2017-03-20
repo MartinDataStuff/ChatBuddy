@@ -11,23 +11,19 @@
     <fa [name]="'bars'" [size]="2"></fa>
   </button>
   <md-menu #menu="mdMenu">
-    <button md-menu-item routerLink="/">
+    <button md-menu-item routerLink="/login">
       <fa [name]="'sign-in'"></fa>
       <span>Login</span>
     </button>
-    <button md-menu-item routerLink="/" disabled>
-      <fa [name]="'user-plus'"></fa>
-      <span>Register</span>
-    </button>
-    <button md-menu-item routerLink="/">
+    <button md-menu-item routerLink="/lobby">
       <fa [name]="'comments'"></fa>
       <span>Lobby</span>
     </button>
-    <button md-menu-item routerLink="/">
+    <button md-menu-item routerLink="/contact">
       <fa [name]="'pencil'"></fa>
       <span>Contact</span>
     </button>
-    <button md-menu-item routerLink="/">
+    <button md-menu-item routerLink="/about">
       <fa [name]="'info'"></fa>
       <span>About</span>
     </button>
