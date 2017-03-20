@@ -1,3 +1,24 @@
-<p>
-  chatroom works!
-</p>
+<chatbuddy-toolbar [titleofcurrentpage]="Chatroom"></chatbuddy-toolbar>
+<textarea [(ngModel)]="chatOutput" name="ChatInput" ng-model="biography" mdInput placeholder="Type a message here"></textarea>
+  <form  (ng-submit)="enterText()" name="userForm">
+    <p >dotCounter: {{dotCounter}}</p>
+    <div *ngIf="chatInput && chatInput.length > 0">
+
+      <div *ngIf="!!getDotCounter === !!NaN">
+      <fa  [name]="'circle'"></fa>
+      </div>
+      <div *ngIf="dotCounter >= 0">
+        <fa  [name]="'circle'"></fa>
+      </div>
+      <div *ngIf="dotCounter >= 1">
+        <fa  [name]="'circle'"></fa>
+      </div>
+      <div *ngIf="getDotCounter >= 2">
+        <fa  [name]="'circle'"></fa>
+      </div>
+    </div>
+    <md-input-container>
+      <textarea [(ngModel)]="chatInput" name="ChatInput" ng-model="biography" mdInput placeholder="Type a message here"></textarea>
+      <button type="submit" md-raised-button (click)="enterText()" color="primary">Send</button>
+    </md-input-container>
+  </form>
