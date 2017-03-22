@@ -19,6 +19,7 @@ import { LoginComponent } from './facebook-auth/login/login.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ChatroomComponent } from './chat-room/chatroom/chatroom.component';
+import { FacebookService } from 'ng2-facebook-sdk';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAdO4NXTo52JDsXs6YG-IdjUFlXjaRfv0M",
@@ -53,7 +54,7 @@ export const firebarebaseLoginConfig =  {
     AngularFireModule.initializeApp(firebaseConfig, firebarebaseLoginConfig)
 
   ],
-  providers: [],
+  providers: [FacebookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

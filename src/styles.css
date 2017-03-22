@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+@import '~@angular/material/core/theming/prebuilt/purple-green.css';
 html{
   min-height: 100vh;
   height: 100vh;
@@ -7,4 +7,11 @@ html{
 
 body{
   position: absolute; top: 0; bottom: 0; right: 0; left: 0;
+  background-color: floralwhite;
+}
+
+p{
+  color: gray;
+  min-font-size: 120;
+  max-font-size: 140;
 }
