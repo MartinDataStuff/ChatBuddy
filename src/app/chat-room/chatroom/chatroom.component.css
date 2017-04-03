@@ -1,0 +1,26 @@
+.inline {
+
+  display:inline-block;
+}
+
+.onlineUsersList{
+  text-align: left;
+}
+
+.aligncCenter{
+  text-align:center;
+}
+
+.alignLeft{
+  text-align:left;
+}
+
+.userListMaxHeight{
+  height: 5em;
+  border: 1px solid red;
+}
+
+.row > div {
+  background: lightgrey;
+  border: 1px solid grey;
+}

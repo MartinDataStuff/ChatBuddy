@@ -7,7 +7,7 @@ import {Component, OnInit, Input} from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
-  @Input()
+ @Input()
   titleofcurrentpage = "noTitle";
   constructor() { }
 
