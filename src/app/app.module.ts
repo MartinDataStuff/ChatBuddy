@@ -20,6 +20,9 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ChatroomComponent } from './chat-room/chatroom/chatroom.component';
 import { FacebookService } from 'ng2-facebook-sdk';
+import { SettingsComponent } from './settings/settings.component';
+
+import { AlertModule } from 'ng2-bootstrap';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAdO4NXTo52JDsXs6YG-IdjUFlXjaRfv0M",
@@ -42,8 +45,10 @@ export const firebarebaseLoginConfig =  {
     AboutComponent,
     ContactComponent,
     ChatroomComponent,
+    SettingsComponent,
   ],
   imports: [
+    AlertModule.forRoot(),
     BrowserModule,
     FormsModule,
     HttpModule,
