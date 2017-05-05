@@ -27,11 +27,12 @@ import { AlertModule } from 'ng2-bootstrap';
 import { ChatSettingsComponent } from './chat-room/chat-settings/chat-settings.component';
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyAdO4NXTo52JDsXs6YG-IdjUFlXjaRfv0M",
-  authDomain: "cp2test-f105d.firebaseapp.com",
-  databaseURL: "https://cp2test-f105d.firebaseio.com",
-  storageBucket: "cp2test-f105d.appspot.com",
-  messagingSenderId: "162855485996"
+  apiKey: "AIzaSyCgOyGyivcRbB4yrUOIH61PPbQpXiC-Mlk",
+  authDomain: "chatbuddy-26bfc.firebaseapp.com",
+  databaseURL: "https://chatbuddy-26bfc.firebaseio.com",
+  storageBucket: "chatbuddy-26bfc.appspot.com",
+  messagingSenderId: "805524145808"
+
 };
 export const firebarebaseLoginConfig =  {
   provider: AuthProviders.Password,
