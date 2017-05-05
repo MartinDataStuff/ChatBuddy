@@ -1,0 +1,17 @@
+<md-toolbar #settingsToolbar color="primary">
+  <fa #cogWheelRotating class="{{ChatSettingsExpanded ? 'animatedCogWheel' : 'normalCogWheel'}}" [rotate]="270"[name]="'cog'" [size]="2"></fa>
+  <div class="divider"></div>
+  <button *ngIf="ChatSettingsExpanded === false" #btn_ToggleAutoScroll type="button" md-raised-button (click)="toggleSettingsExpand()" color="primary">Show settings</button>
+  <button *ngIf="ChatSettingsExpanded === true" #btn_ToggleAutoScroll type="button" md-raised-button (click)="toggleSettingsExpand()" color="primary">Hide settings</button>
+  <span class="fill-remaining-space" ></span>
+  <span>{{SettingsTitle}}</span>
+  <span class="fill-remaining-space" ></span>
+</md-toolbar>
+<div #settingsMainDiv *ngIf="ChatSettingsExpanded === true">
+  <p>Chat settings expanded</p>
+  <p>Chat settings expanded</p>
+  <p>Chat settings expanded</p>
+  <p>Chat settings expanded</p>
+  <p>Chat settings expanded</p>
+  <p>Chat settings expanded</p>
+</div>

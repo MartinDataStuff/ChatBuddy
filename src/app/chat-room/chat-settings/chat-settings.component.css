@@ -1,0 +1,30 @@
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.divider{
+  width:5px;
+  display:inline-block;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(180deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(180deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(180deg); transform:rotate(180deg); } }
+
+.animatedCogWheel{
+  -webkit-animation:spin 0.5s linear;
+  -moz-animation:spin 0.5s linear;
+  animation:spin 0.5s linear;
+
+  color:black;
+  cursor: pointer;
+  color:#999;
+}
+
+.normalCogWheel{
+  transition: color 0.5s linear; /* vendorless fallback */
+  -o-transition: color 0.5s linear; /* opera */
+  -ms-transition: color 0.5s linear; /* IE 10 */
+  -moz-transition: color 0.5s linear; /* Firefox */
+  -webkit-transition: color 0.5s linear; /*safari and chrome */
+}

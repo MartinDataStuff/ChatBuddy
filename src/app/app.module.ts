@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import {ResizableModule} from 'angular2-resizable';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome';
@@ -23,6 +24,7 @@ import { FacebookService } from 'ng2-facebook-sdk';
 import { SettingsComponent } from './settings/settings.component';
 
 import { AlertModule } from 'ng2-bootstrap';
+import { ChatSettingsComponent } from './chat-room/chat-settings/chat-settings.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAdO4NXTo52JDsXs6YG-IdjUFlXjaRfv0M",
@@ -46,6 +48,7 @@ export const firebarebaseLoginConfig =  {
     ContactComponent,
     ChatroomComponent,
     SettingsComponent,
+    ChatSettingsComponent,
   ],
   imports: [
     AlertModule.forRoot(),
@@ -56,7 +59,8 @@ export const firebarebaseLoginConfig =  {
     Angular2FontawesomeModule,
     FlexLayoutModule,
     ChatBuddyRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig, firebarebaseLoginConfig)
+    AngularFireModule.initializeApp(firebaseConfig, firebarebaseLoginConfig),
+    ResizableModule
 
   ],
   providers: [FacebookService],

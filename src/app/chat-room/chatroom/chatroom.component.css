@@ -5,6 +5,21 @@
 
 .onlineUsersList{
   text-align: left;
+  background-color: saddlebrown;
+}
+
+.wrap{
+  height: 100%;
+  overflow: auto;
+  background-color: #FD4140;
+  max-width: 19vh;
+  max-height: 90vh;
+}
+
+.divider{
+  width:5px;
+  display:inline-block;
+  border: 1px solid grey;
 }
 
 .aligncCenter{
@@ -23,4 +38,37 @@
 .row > div {
   background: lightgrey;
   border: 1px solid grey;
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.rectangle {
+  position: relative;
+  top: 200px;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  width: 300px;
+  height: 150px;
+  background-color: #FD4140;
+  border: solid 1px #121621;
+  color: #121621;
+  margin: auto;
+}
+.resize-handle {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.new-line{
+  display: block;
+  min-height: 2em;
+}
+
+#chat-output{
+  overflow: scroll;
+  /*height: xyz; setting a height is maybe needed together with the overflow: scroll*/
 }

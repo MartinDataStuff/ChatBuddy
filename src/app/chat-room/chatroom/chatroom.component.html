@@ -1,14 +1,41 @@
 <chatbuddy-toolbar [titleofcurrentpage]="Chatroom"></chatbuddy-toolbar>
 <div class="row">
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-  <div  class="alignLeft">
 
-  <button
-    (click)="toggleUserList()" md-raised-button color="primary">Toggle userlist</button>
-  <div id="usersListWrapper" *ngIf="isDisplayingUserList" class="userListMaxHeight">
-    <md-list id="usersList" class="inline onlineUsersList">
-      <md-list-item>User1</md-list-item>
-      <md-list-item>User2</md-list-item>
+  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+  <div  class="alignLeft"
+        mwlResizable
+        [validateResize]="validate"
+        [resizeEdges]="{right: true}"
+        [enableGhostResize]="true"
+        [resizeSnapGrid]="{left: 10, right: 10}">
+
+  <div id="usersListWrapper"
+       mwlResizeHandle
+       [resizeEdges]="{bottom: true, right: true}">
+    <md-list id="usersList" class="inline onlineUsersList wrap fill-remaining-space">
+      <md-list-item>User1User1User1User1User1User1User1User1User1User1User1User1User1User1User1User1</md-list-item>
+      <div class="divider"></div>
+      <md-list-item>User2User2User2User2User2User2User2User2User2User2User2User2User2User2User2User2</md-list-item>
+      <div class="divider"></div>
+      <md-list-item>User3</md-list-item>
+      <div class="divider"></div>
+      <md-list-item>User4</md-list-item>
+      <md-list-item>User5</md-list-item>
+      <md-list-item>User6</md-list-item>
+      <md-list-item>User7</md-list-item>
+      <md-list-item>User8</md-list-item>
+      <md-list-item>User9</md-list-item>
+      <md-list-item>User1User1User1User1User1User1User1User1User1User1User1User1User1User1User1User1</md-list-item>
+      <md-list-item>User2User2User2User2User2User2User2User2User2User2User2User2User2User2User2User2</md-list-item>
+      <md-list-item>User3</md-list-item>
+      <md-list-item>User4</md-list-item>
+      <md-list-item>User5</md-list-item>
+      <md-list-item>User6</md-list-item>
+      <md-list-item>User7</md-list-item>
+      <md-list-item>User8</md-list-item>
+      <md-list-item>User9</md-list-item>
+      <md-list-item>User1User1User1User1User1User1User1User1User1User1User1User1User1User1User1User1</md-list-item>
+      <md-list-item>User2User2User2User2User2User2User2User2User2User2User2User2User2User2User2User2</md-list-item>
       <md-list-item>User3</md-list-item>
       <md-list-item>User4</md-list-item>
       <md-list-item>User5</md-list-item>
@@ -21,26 +48,34 @@
   </div>
   </div>
   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-  <div id="chatInputField">
-    <textarea [ngModel]="chatOutput" name="ChatInput" ng-model="biography" mdInput placeholder="Type a message here" form="chatForm"></textarea>
-    <form  (ng-submit)="enterText()" id="chatForm" name="chatForm">
-      <div class="inline" *ngIf="isTyping">
 
-        <div class="inline" *ngIf="this.dotCounter >= 2">
-          <fa  [name]="'circle'"></fa>
-        </div>
-        <div class="inline" *ngIf="this.dotCounter >= 4">
-          <fa  [name]="'circle'"></fa>
-        </div>
-        <div class="inline" *ngIf="this.dotCounter >= 6">
-          <fa  [name]="'circle'"></fa>
-        </div>
-      </div>
+  <div id="chatInputField">
+    <textarea  #scrollMe [ngModel]="chatOutput" name="ChatInput" ng-model="biography" mdInput placeholder="Type a message here" form="chatForm"></textarea>
+    <form  (ng-submit)="enterText()" id="chatForm" name="chatForm">
       <md-input-container>
         <textarea [(ngModel)]="chatInput" name="ChatInput_TextArea" ng-model="biography" mdInput placeholder="Type a message here"></textarea>
       </md-input-container>
       <button type="submit" md-raised-button (click)="enterText()" color="primary">Send</button>
+      <div class="new-line">
+        <div class="new-line">
+      <div *ngIf="isTyping">
+        <p class="inline">x is typing</p>
+        <div class="inline" *ngIf="this.dotCounter >= 0">
+          <p>.</p>
+        </div>
+        <div class="inline" *ngIf="this.dotCounter >= 2">
+          <p>.</p>
+        </div>
+        <div class="inline" *ngIf="this.dotCounter >= 4">
+          <p>.</p>
+        </div>
+      </div></div></div>
     </form>
   </div>
+    <div #chatOptions>
+      <button *ngIf="autoScrollingEnabled === false" #btn_ToggleAutoScroll type="button" md-raised-button (click)="toggleAutoScroll()" color="primary">Enable Autoscroll</button>
+      <button *ngIf="autoScrollingEnabled === true" #btn_ToggleAutoScroll type="button" md-raised-button (click)="toggleAutoScroll()" color="primary">Disable Autoscroll</button>
+    </div>
   </div>
 </div>
+<chatbuddy-chat-settings></chatbuddy-chat-settings>
