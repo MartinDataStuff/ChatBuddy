@@ -1,14 +1,6 @@
 <chatbuddy-toolbar [titleofcurrentpage]="Chatroom"></chatbuddy-toolbar>
-<div class="jumbotron jumbotron-sm">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 col-lg-12">
-        <h1 class="h1">
-          Chatroom <br><small>you are chatting in {{chatRoom.title}}</small></h1>
-      </div>
-    </div>
-  </div>
-</div>
+<chatbuddy-top-of-section [title]="'Chatroom'" [briefText]="'you are chatting in '+chatRoom.title"></chatbuddy-top-of-section>
 
 <chatbuddy-chat-output></chatbuddy-chat-output>
+<chatbuddy-chat-input></chatbuddy-chat-input>
 <chatbuddy-chat-settings></chatbuddy-chat-settings>

@@ -1,14 +1,5 @@
 <chatbuddy-toolbar [titleofcurrentpage]="'Lobby'"></chatbuddy-toolbar>
-<div class="jumbotron jumbotron-sm">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 col-lg-12">
-        <h1 class="h1">
-          Lobby <br><small>Please pick a room to chat in</small></h1>
-      </div>
-    </div>
-  </div>
-</div>
+<chatbuddy-top-of-section [title]="'Lobby'" [briefText]="'Please pick a room to chat in'"></chatbuddy-top-of-section>
 <div ng-controller="safeCtrl">
 
   <button type="button" ng-click="addRandomItem(row)" class="btn btn-sm btn-success">
