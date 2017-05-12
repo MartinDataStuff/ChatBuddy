@@ -25,6 +25,7 @@ import { SettingsComponent } from './settings/settings.component';
 
 import { AlertModule } from 'ng2-bootstrap';
 import { ChatSettingsComponent } from './chat-room/chat-settings/chat-settings.component';
+import { ChatOutputComponent } from './chat-room/chat-output/chat-output.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCgOyGyivcRbB4yrUOIH61PPbQpXiC-Mlk",
@@ -50,6 +51,7 @@ export const firebarebaseLoginConfig =  {
     ChatroomComponent,
     SettingsComponent,
     ChatSettingsComponent,
+    ChatOutputComponent,
   ],
   imports: [
     AlertModule.forRoot(),

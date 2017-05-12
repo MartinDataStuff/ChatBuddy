@@ -1,0 +1,24 @@
+<div class="container clearfix">
+  <div class="chat">
+    <div class="chat-history">
+      <ul class="chat-ul">
+        <li class="clearfix" *ngFor="let chatMessage of chatMessages">
+          <!--Align user name and circle depending if current user or other user-->
+          <div class="{{currentUser.ID == chatMessage.user.ID ? 'message-data' : 'message-data align-right'}}">
+            <!--Put user circle before or after name depending if current user or other user-->
+            <span class="message-data-name">
+              <i *ngIf="currentUser.ID == chatMessage.user.ID" class="fa fa-circle you"></i>
+              {{chatMessage.user.ChatName}}
+            </span>
+            <i *ngIf="currentUser.ID != chatMessage.user.ID" class="fa fa-circle me"></i>
+            <!---->
+          </div>
+          <!---->
+          <div class="{{currentUser.ID == chatMessage.user.ID ? 'message you-message' : 'message me-message float-right'}}">
+            {{chatMessage.messageBody}}
+          </div>
+        </li>
+      </ul>
+    </div> <!-- end chat-history -->
+  </div> <!-- end chat -->
+ </div>

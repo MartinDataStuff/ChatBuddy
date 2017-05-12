@@ -59,8 +59,7 @@ export class LobbyComponent implements OnInit, DoCheck{
   }
 
   search(){
-   // this.searchInput = "chattyroom1";
-    console.log(this.searchInput);
+    //console.log(this.searchInput);
     if (this.searchInput === undefined)
       return;
     if (this.searchInput.length <= 2)
