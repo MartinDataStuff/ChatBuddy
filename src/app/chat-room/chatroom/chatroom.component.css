@@ -45,6 +45,20 @@
   align-content: stretch;
 }
 
+.jumbotron {
+  background: #358CCE;
+  color: #FFF;
+  border-radius: 0px;
+}
+.jumbotron-sm { padding-top: 24px;
+  padding-bottom: 24px; }
+.jumbotron small {
+  color: #FFF;
+}
+.h1 small {
+  font-size: 24px;
+}
+
 .chatInputArea{
   position: relative;
   min-height: 150px;
@@ -66,10 +80,7 @@
   border: 1px solid red;
 }
 
-.row > div {
-  background: lightgrey;
-  border: 1px solid grey;
-}
+
 
 .fill-remaining-space {
   flex: 1 1 auto;
