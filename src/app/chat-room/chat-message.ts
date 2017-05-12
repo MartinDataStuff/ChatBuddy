@@ -4,4 +4,5 @@ export class ChatMessage{
   user: ChatUser;
   messageBody: string;
   timeSent = new Date();
+  showDetails = false;
 }

@@ -7,7 +7,7 @@
           <div class="{{currentUser.ID == chatMessage.user.ID ? 'message-data' : 'message-data align-right'}}">
             <!--Put user circle before or after name depending if current user or other user-->
             <span class="message-data-name">
-              <div>{{chatMessage.timeSent.toLocaleString()}}</div>
+              <div *ngIf="chatMessage.showDetails === true">{{chatMessage.timeSent.toLocaleString()}}</div>
               <i *ngIf="currentUser.ID == chatMessage.user.ID" class="fa fa-circle you"></i>
               {{chatMessage.user.ChatName}}
             </span>
@@ -15,7 +15,7 @@
             <!---->
           </div>
           <!---->
-          <div class="{{currentUser.ID == chatMessage.user.ID ? 'message you-message' : 'message me-message float-right'}}">
+          <div  (click)="chatMessage.showDetails = !chatMessage.showDetails" class="{{currentUser.ID == chatMessage.user.ID ? 'message you-message' : 'message me-message float-right'}}">
             {{chatMessage.messageBody}}
             <br>
 
