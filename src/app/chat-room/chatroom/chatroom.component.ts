@@ -3,6 +3,7 @@ import {ResizeEvent} from 'angular2-resizable';
 import { ActivatedRoute } from '@angular/router';
 import {ChatRoom} from "../chat-room";
 import {ChatUser} from "../chat-user";
+import {ChatMessage} from "../chat-message";
 @Component({
   selector: 'chatbuddy-chatroom',
   templateUrl: './chatroom.component.html',
@@ -11,6 +12,7 @@ import {ChatUser} from "../chat-user";
 export class ChatroomComponent implements OnInit, AfterViewChecked {
   @ViewChild('scrollMe') private myScrollContainer: ElementRef;
 
+  currentUser: ChatUser;
   dotCounter: number;
   isTyping: boolean;
   chatOutput: string; //Chat output probably should consist of a List of chatMessage objects. (strings with id of sender etc.)
@@ -58,9 +60,58 @@ export class ChatroomComponent implements OnInit, AfterViewChecked {
     chatRoom2.isAnonymous = false;
     chatRoom2.isPrivate = false;
     chatRoom2.usersInRoom = [chatUser1, chatUser2, chatUser1, chatUser2];
+    this.currentUser = chatUser1;
     this.mockChatRooms = [chatRoom0, chatRoom1,chatRoom2];
     this.chatRoom = new ChatRoom();
     this.chatRoom.usersInRoom = [chatUser1];
+    //
+  }
+
+  forwardChatOutput(event){
+    console.log("Emit received");
+    let newMsg = new ChatMessage();
+    newMsg.messageBody = event;
+    let user = new ChatUser();
+    user.ID = this.currentUser.ID;
+    user.ChatName = this.currentUser.ChatName;
+    newMsg.user = user;
+    newMsg.ID = 1+"";
+    if (this.chatRoom.messagesInRoom === undefined)
+    {
+      this.chatRoom.messagesInRoom = [newMsg];
+      this.currentUser = this.chatRoom.usersInRoom[0];
+    }
+    else
+    {
+      this.chatRoom.messagesInRoom = this.chatRoom.messagesInRoom.concat([newMsg]);
+
+    }
+    if (this.currentUser == this.chatRoom.usersInRoom[0])
+      this.currentUser = this.chatRoom.usersInRoom[1];
+    else if (this.currentUser == this.chatRoom.usersInRoom[1])
+      this.currentUser = this.chatRoom.usersInRoom[0];
+    console.log(this.chatRoom.messagesInRoom);
+    //Find empty slot and put message into it.
+    // for(let i = 0; i<40; i++) {
+    //   if(this.chatRoom.messagesInRoom[i] === undefined)
+    //   {
+    //     //Construct message and add it to the chat.
+    //     this.chatRoom.messagesInRoom[i] = newMsg;
+    //     break;
+    //   }
+    // }
+  }
+
+  public clone(): any {
+    var cloneObj = new (<any>this.constructor());
+    for (var attribut in this.currentUser) {
+      if (typeof this.currentUser[attribut] === "object") {
+        cloneObj[attribut] = this.clone();
+      } else {
+        cloneObj[attribut] = this.currentUser[attribut];
+      }
+    }
+    return cloneObj;
   }
 
   ngOnInit() {
@@ -71,10 +122,8 @@ export class ChatroomComponent implements OnInit, AfterViewChecked {
       this.chatRoom = this.mockChatRooms[this.chatRoomID];
     });
 
-    this.dotCounter = 1;
     this.autoScrollingEnabled = true;
-    this.startDotCounter(500); //Increase dot counter every half second, using half second to keep faster update in detecting writing or not writing.
-    this.chatOutput = "Welcome to the chat!";
+     this.chatOutput = "Welcome to the chat!";
   }
 
   scrollChatToBottom(): void {
@@ -93,61 +142,5 @@ export class ChatroomComponent implements OnInit, AfterViewChecked {
   }
   }
 
-  enterText() {
-   if (this.chatInput === undefined)
-     return;
-   if (this.chatInput.length === 0)
-     return;
-    this.chatOutput = this.chatOutput + "\n"+this.chatInput;
-    this.chatInput = "";
-    console.log("dotCounter: " + this.dotCounter);
-  }
-
-  startDotCounter(interval: number) {
-    window.setInterval(this.increaseDotCounter, interval);
-  }
-
-  increaseDotCounter = () => {
-    {
-      this.isTyping = this.chatInput && this.chatInput.length > 0; //check if typing
-      if (!this.isTyping) {
-        this.dotCounter = 0;
-        return; //return if not typing.
-      }
-      if (!!this.dotCounter === !!NaN && this.dotCounter !== 0) {
-        console.log("It's not a number")
-        this.dotCounter = 0; //If not a number and not 0, where 0 is the start number for the
-      }
-
-      this.dotCounter = this.dotCounter % 4; //number after % represents max amount of dots
-      console.log("dotCounter: " + this.dotCounter);
-      this.dotCounter++;
-    }
-  }
-}
-
-
-//This section was part of the code used in the resizable user list, user list is as of now not resizable.
-export class Demo {
-
-  public style: Object = {};
-
-  validate(event: ResizeEvent): boolean {
-    const MIN_DIMENSIONS_PX: number = 50;
-    if (event.rectangle.width < MIN_DIMENSIONS_PX || event.rectangle.height < MIN_DIMENSIONS_PX) {
-      return false;
-    }
-    return true;
-  }
-
-  onResizeEnd(event: ResizeEvent): void {
-    this.style = {
-      position: 'fixed',
-      left: `${event.rectangle.left}px`,
-      top: `${event.rectangle.top}px`,
-      width: `${event.rectangle.width}px`,
-      height: `${event.rectangle.height}px`
-    };
-  }
 
 }

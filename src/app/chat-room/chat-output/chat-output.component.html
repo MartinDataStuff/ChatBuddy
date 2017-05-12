@@ -3,6 +3,7 @@
     <div class="chat-history">
       <ul class="chat-ul">
         <li class="clearfix" *ngFor="let chatMessage of chatMessages">
+          <div *ngIf="chatMessage.ID != undefined">
           <!--Align user name and circle depending if current user or other user-->
           <div class="{{currentUser.ID == chatMessage.user.ID ? 'message-data' : 'message-data align-right'}}">
             <!--Put user circle before or after name depending if current user or other user-->
@@ -19,7 +20,7 @@
             {{chatMessage.messageBody}}
             <br>
 
-          </div>
+          </div></div>
         </li>
       </ul>
     </div> <!-- end chat-history -->

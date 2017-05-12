@@ -1,6 +1,6 @@
 <chatbuddy-toolbar [titleofcurrentpage]="Chatroom"></chatbuddy-toolbar>
 <chatbuddy-top-of-section [title]="'Chatroom'" [briefText]="'you are chatting in '+chatRoom.title"></chatbuddy-top-of-section>
 
-<chatbuddy-chat-output></chatbuddy-chat-output>
-<chatbuddy-chat-input></chatbuddy-chat-input>
+<chatbuddy-chat-output [chatMessages]="this.chatRoom.messagesInRoom" [currentUser]="currentUser"></chatbuddy-chat-output>
+<chatbuddy-chat-input (chatOutput)="forwardChatOutput($event)"></chatbuddy-chat-input>
 <chatbuddy-chat-settings></chatbuddy-chat-settings>

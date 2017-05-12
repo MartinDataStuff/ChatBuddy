@@ -1,3 +1,23 @@
-<p>
-  chat-input works!
-</p>
+<div class="chatInputArea overflowAuto"#chatInputField>
+  <form  (ng-submit)="enterText()" id="chatForm" class="chatInputContent" name="chatForm">
+    <md-input-container>
+      <textarea class="overflowAuto form-control" [(ngModel)]="chatInput" name="ChatInput_TextArea" ng-model="biography" mdInput placeholder="Type a message here"></textarea>
+    </md-input-container>
+    <button type="submit" md-raised-button (click)="enterText()" color="primary">Send</button>
+    <!--here are the dots appearing when you type-->
+    <div #dotsThatAppearWhenTyping class="overflowAuto">
+      <div class="new-line">
+        <div *ngIf="isTyping">
+          <p class="inline">Typing</p>
+          <div class="inline" *ngIf="this.dotCounter >= 0">
+            <p>.</p>
+          </div>
+          <div class="inline" *ngIf="this.dotCounter >= 2">
+            <p>.</p>
+          </div>
+          <div class="inline" *ngIf="this.dotCounter >= 4">
+            <p>.</p>
+          </div>
+        </div></div></div>
+  </form>
+</div>
