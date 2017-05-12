@@ -9,6 +9,12 @@
     </i> Add random item
   </button>
 
+  <div class="maxWidth">
+  <md-input-container class="maxWidth overflowAuto">
+    <th colspan="5"><input [(ngModel)]="searchInput"  mdInput class="form-control maxWidth overflowAuto" placeholder="Search for chatroom" type="text"/></th>
+  </md-input-container>
+  </div>
+  <div class="overflowAuto">
   <table st-table="displayedCollection" st-safe-src="rowCollection" class="table table-striped">
     <thead>
     <tr>
@@ -18,14 +24,9 @@
       <th st-sort="Private">Private</th>
       <th st-sort="Users">Users</th>
     </tr>
-    <tr>
-      <md-input-container class="maxWidth">
-      <th colspan="5"><input [(ngModel)]="searchInput"  mdInput class="form-control maxWidth" placeholder="global search ..." type="text"/></th>
-      </md-input-container>
-    </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let chatroom of (displayedChatRooms)">
+    <tr *ngFor="let chatroom of (displayedChatRooms)" [routerLink]="['/chatroom', chatroom.ID]">
       <td>{{chatroom.title}}</td>
       <td>{{chatroom.ID}}</td>
       <td>{{chatroom.isAnonymous}}</td>
@@ -39,6 +40,6 @@
       </td>
     </tr>
     </tbody>
-  </table>
+  </table></div>
 
 </div>

@@ -2,65 +2,28 @@
 <div class="row">
 
   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-  <div  class="alignLeft"
-        mwlResizable
-        [validateResize]="validate"
-        [resizeEdges]="{right: true}"
-        [enableGhostResize]="true"
-        [resizeSnapGrid]="{left: 10, right: 10}">
-
-  <div id="usersListWrapper"
-       mwlResizeHandle
-       [resizeEdges]="{bottom: true, right: true}">
+  <div id="usersListWrapper">
     <md-list id="usersList" class="inline onlineUsersList wrap fill-remaining-space">
-      <md-list-item>User1User1User1User1User1User1User1User1User1User1User1User1User1User1User1User1</md-list-item>
-      <div class="divider"></div>
-      <md-list-item>User2User2User2User2User2User2User2User2User2User2User2User2User2User2User2User2</md-list-item>
-      <div class="divider"></div>
-      <md-list-item>User3</md-list-item>
-      <div class="divider"></div>
-      <md-list-item>User4</md-list-item>
-      <md-list-item>User5</md-list-item>
-      <md-list-item>User6</md-list-item>
-      <md-list-item>User7</md-list-item>
-      <md-list-item>User8</md-list-item>
-      <md-list-item>User9</md-list-item>
-      <md-list-item>User1User1User1User1User1User1User1User1User1User1User1User1User1User1User1User1</md-list-item>
-      <md-list-item>User2User2User2User2User2User2User2User2User2User2User2User2User2User2User2User2</md-list-item>
-      <md-list-item>User3</md-list-item>
-      <md-list-item>User4</md-list-item>
-      <md-list-item>User5</md-list-item>
-      <md-list-item>User6</md-list-item>
-      <md-list-item>User7</md-list-item>
-      <md-list-item>User8</md-list-item>
-      <md-list-item>User9</md-list-item>
-      <md-list-item>User1User1User1User1User1User1User1User1User1User1User1User1User1User1User1User1</md-list-item>
-      <md-list-item>User2User2User2User2User2User2User2User2User2User2User2User2User2User2User2User2</md-list-item>
-      <md-list-item>User3</md-list-item>
-      <md-list-item>User4</md-list-item>
-      <md-list-item>User5</md-list-item>
-      <md-list-item>User6</md-list-item>
-      <md-list-item>User7</md-list-item>
-      <md-list-item>User8</md-list-item>
-      <md-list-item>User9</md-list-item>
+        <md-list-item *ngFor="let chatuser of (chatRoom.usersInRoom)">
+          <p>{{chatuser.ChatName}} - {{chatuser.ID}}</p>
+        </md-list-item>
     </md-list>
   </div>
   </div>
-  </div>
   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-    <div #chatOutputField class="alignBottom">
+    <div #chatOutputField class="alignBottom overflowAuto">
       <p class="">Lots of space taken up</p>
     <textarea #scrollMe [ngModel]="chatOutput" name="ChatInput" class="alignBottom wrapChatOutput form-control"
               ng-model="biography" mdInput placeholder="Type a message here" form="chatForm"></textarea>
     </div>
-    <div class="chatInputArea"#chatInputField>
+    <div class="chatInputArea overflowAuto"#chatInputField>
     <form  (ng-submit)="enterText()" id="chatForm" class="chatInputContent" name="chatForm">
       <md-input-container>
-        <textarea class="form-control" [(ngModel)]="chatInput" name="ChatInput_TextArea" ng-model="biography" mdInput placeholder="Type a message here"></textarea>
+        <textarea class="overflowAuto form-control" [(ngModel)]="chatInput" name="ChatInput_TextArea" ng-model="biography" mdInput placeholder="Type a message here"></textarea>
       </md-input-container>
       <button type="submit" md-raised-button (click)="enterText()" color="primary">Send</button>
       <!--here are the dots appearing when you type-->
-      <div #dotsThatAppearWhenTyping class="new-line">
+      <div #dotsThatAppearWhenTyping class="overflowAuto">
         <div class="new-line">
       <div *ngIf="isTyping">
         <p class="inline">x is typing</p>

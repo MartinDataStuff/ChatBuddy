@@ -1,3 +1,7 @@
 .maxWidth {
-  width: 100em;
+  width: 100%;
+}
+
+.overflowAuto{
+  overflow: auto;
 }

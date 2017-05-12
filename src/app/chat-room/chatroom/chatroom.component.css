@@ -1,3 +1,7 @@
+.overflowAuto{
+  overflow: auto;
+}
+
 .inline {
   display:inline-block;
 }

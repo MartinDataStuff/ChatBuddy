@@ -1,5 +1,5 @@
 import { NgModule }             from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, ActivatedRoute } from '@angular/router';
 import {HomeComponent} from "./home/home.component";
 import {LobbyComponent} from "./lobby/lobby/lobby.component";
 import {ContactComponent} from "./contact/contact.component";
@@ -12,7 +12,7 @@ const routes: Routes = [
 {  path: 'login', component: LoginComponent },
   {  path: 'lobby', component: LobbyComponent },
   {  path: 'contact', component: ContactComponent },
-  {  path: 'testchatroom', component: ChatroomComponent },
+  {  path: 'chatroom/:id', component: ChatroomComponent },
 {  path: 'about', component: AboutComponent }];
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
