@@ -48,15 +48,19 @@
   </div>
   </div>
   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-
-  <div id="chatInputField">
-    <textarea  #scrollMe [ngModel]="chatOutput" name="ChatInput" ng-model="biography" mdInput placeholder="Type a message here" form="chatForm"></textarea>
-    <form  (ng-submit)="enterText()" id="chatForm" name="chatForm">
+    <div #chatOutputField class="alignBottom">
+      <p class="">Lots of space taken up</p>
+    <textarea #scrollMe [ngModel]="chatOutput" name="ChatInput" class="alignBottom wrapChatOutput form-control"
+              ng-model="biography" mdInput placeholder="Type a message here" form="chatForm"></textarea>
+    </div>
+    <div class="chatInputArea"#chatInputField>
+    <form  (ng-submit)="enterText()" id="chatForm" class="chatInputContent" name="chatForm">
       <md-input-container>
-        <textarea [(ngModel)]="chatInput" name="ChatInput_TextArea" ng-model="biography" mdInput placeholder="Type a message here"></textarea>
+        <textarea class="form-control" [(ngModel)]="chatInput" name="ChatInput_TextArea" ng-model="biography" mdInput placeholder="Type a message here"></textarea>
       </md-input-container>
       <button type="submit" md-raised-button (click)="enterText()" color="primary">Send</button>
-      <div class="new-line">
+      <!--here are the dots appearing when you type-->
+      <div #dotsThatAppearWhenTyping class="new-line">
         <div class="new-line">
       <div *ngIf="isTyping">
         <p class="inline">x is typing</p>
@@ -72,10 +76,10 @@
       </div></div></div>
     </form>
   </div>
-    <div #chatOptions>
-      <button *ngIf="autoScrollingEnabled === false" #btn_ToggleAutoScroll type="button" md-raised-button (click)="toggleAutoScroll()" color="primary">Enable Autoscroll</button>
-      <button *ngIf="autoScrollingEnabled === true" #btn_ToggleAutoScroll type="button" md-raised-button (click)="toggleAutoScroll()" color="primary">Disable Autoscroll</button>
-    </div>
+    <!--<div #chatOptions>-->
+      <!--<button *ngIf="autoScrollingEnabled === false" #btn_ToggleAutoScroll type="button" md-raised-button (click)="toggleAutoScroll()" color="primary">Enable Autoscroll</button>-->
+      <!--<button *ngIf="autoScrollingEnabled === true" #btn_ToggleAutoScroll type="button" md-raised-button (click)="toggleAutoScroll()" color="primary">Disable Autoscroll</button>-->
+    <!--</div>-->
   </div>
 </div>
 <chatbuddy-chat-settings></chatbuddy-chat-settings>

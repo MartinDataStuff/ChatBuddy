@@ -12,21 +12,25 @@
   <table st-table="displayedCollection" st-safe-src="rowCollection" class="table table-striped">
     <thead>
     <tr>
-      <th st-sort="firstName">first name</th>
-      <th st-sort="lastName">last name</th>
-      <th st-sort="birthDate">birth date</th>
-      <th st-sort="balance">balance</th>
+      <th st-sort="Title">Title</th>
+      <th st-sort="ID">ID</th>
+      <th st-sort="Anonymous">Anonymous</th>
+      <th st-sort="Private">Private</th>
+      <th st-sort="Users">Users</th>
     </tr>
     <tr>
-      <th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text"/></th>
+      <md-input-container class="maxWidth">
+      <th colspan="5"><input [(ngModel)]="searchInput"  mdInput class="form-control maxWidth" placeholder="global search ..." type="text"/></th>
+      </md-input-container>
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="row in displayedCollection">
-      <td>{{row.firstName}}</td>
-      <td>{{row.lastName}}</td>
-      <td>{{row.birthDate}}</td>
-      <td>{{row.balance}}</td>
+    <tr *ngFor="let chatroom of (displayedChatRooms)">
+      <td>{{chatroom.title}}</td>
+      <td>{{chatroom.ID}}</td>
+      <td>{{chatroom.isAnonymous}}</td>
+      <td>{{chatroom.isPrivate}}</td>
+      <td>{{chatroom.usersInRoom.length}}</td>
       <td>
         <button type="button" ng-click="removeItem(row)" class="btn btn-sm btn-danger">
           <i class="glyphicon glyphicon-remove-circle">
