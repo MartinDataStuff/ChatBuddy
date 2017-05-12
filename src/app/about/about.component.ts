@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  whyChatBuddyExpanded = true;
+  whoAreWeExpanded = false;
   constructor() { }
 
   ngOnInit() {
   }
 
+  toggleWhyChatBuddy(){
+    this.whyChatBuddyExpanded = !this.whyChatBuddyExpanded;
+  }
+
+  toggleWhoAreWe(){
+    this.whoAreWeExpanded = !this.whoAreWeExpanded;
+  }
 }

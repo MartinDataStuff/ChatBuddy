@@ -9,6 +9,8 @@ export class ToolbarComponent implements OnInit {
 
  @Input()
   titleofcurrentpage = "noTitle";
+  @Input()
+  showContent = true;
   constructor() { }
 
   ngOnInit() {

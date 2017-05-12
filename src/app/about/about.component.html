@@ -9,3 +9,156 @@
     </div>
   </div>
 </div>
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-10">
+
+      <div class="panel-group" id="accordion">
+
+        <div class="panel panel-default">
+
+          <div (mousedown)="toggleWhyChatBuddy()"  class="panel-heading">
+            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion"><span class="glyphicon glyphicon-question-sign"> </span>Why chat buddy?</a>
+              <i *ngIf="whyChatBuddyExpanded === true;" class="fa fa-arrow-down" aria-hidden="true"></i>
+              <i *ngIf="whyChatBuddyExpanded === false;" class="fa fa-arrow-up" aria-hidden="true"></i>
+            </h4>
+          </div>
+          <div *ngIf="whyChatBuddyExpanded === true;" id="collapseOne" class="pstanel-collapse collapse in">
+            <div class="panel-body">
+              <div class="well well-sm well-primary">
+                <div class="row">
+                  <div class="col-xs-3 bold">Name:</div>
+                  <div class="col-xs-3">BOO SREY MOM</div>
+                  <div class="col-xs-3 bold">JPA Class of:</div>
+                  <div class="col-xs-3">2016</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-3 bold">JPA JATS Id number:</div>
+                  <div class="col-xs-3">2016-001</div>
+                  <div class="col-xs-3 bold">Status:</div>
+                  <div class="col-xs-3">Year 12 - Application</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-3 bold">Date of Birth:</div>
+                  <div class="col-xs-3">15 January 1998</div>
+                  <div class="col-xs-3 bold">Gender:</div>
+                  <div class="col-xs-3">Female</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-3 bold">JPA Student ID:</div>
+                  <div class="col-xs-3">945</div>
+                  <div class="col-xs-3 bold">JPA Gradebook ID:</div>
+                  <div class="col-xs-3">1157</div>
+                </div>
+              </div>
+
+
+
+              <div class="well well-sm well-primary">
+
+                <div class="row">
+                  <div class="col-xs-3 bold">Passport Number:</div>
+                  <div class="col-xs-3">CMB253 654 697</div>
+                  <div class="col-xs-3 bold">Full Khmer Name:</div>
+                  <div class="col-xs-3">ប៊ូ ស្រីមុំ</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-3 bold">Passport Issue Date::</div>
+                  <div class="col-xs-3">15/01/2016</div>
+                  <div class="col-xs-3 bold">Passport Expiry Date:</div>
+                  <div class="col-xs-3">14/01/2026</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-3 bold">Passport Place of Issue:</div>
+                  <div class="col-xs-3">Phnom Penh, Cambodia.</div>
+                  <div class="col-xs-3 bold">Official Passport Name:</div>
+                  <div class="col-xs-3">BOO SREY MOM ប៊ូ ស្រ</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-3 bold">Parents Name:</div>
+                  <div class="col-xs-3">Father - ប៊ូ សៀឺត</div>
+                  <div class="col-xs-3 bold">Parents Name:</div>
+                  <div class="col-xs-3">Mother - ធឿន ជាdi</div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+
+          <div (mousedown)="toggleWhoAreWe()" class="panel-heading">
+            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion"><span class="glyphicon glyphicon-certificate"> </span>Who are we?</a>
+              <i *ngIf="whoAreWeExpanded === true;" class="fa fa-arrow-down" aria-hidden="true"></i>
+              <i *ngIf="whoAreWeExpanded === false;" class="fa fa-arrow-up" aria-hidden="true"></i>
+            </h4>
+          </div>
+          <div *ngIf="whoAreWeExpanded === true;" id="collapseTwo" class="pstanel-collapse collapse in">
+            <div class="panel-body">
+              <div class="well well-sm well-primary">
+                <div class="row">
+                  <div class="col-xs-3 bold">Name:</div>
+                  <div class="col-xs-3">BOO SREY MOM</div>
+                  <div class="col-xs-3 bold">JPA Class of:</div>
+                  <div class="col-xs-3">2016</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-3 bold">JPA JATS Id number:</div>
+                  <div class="col-xs-3">2016-001</div>
+                  <div class="col-xs-3 bold">Status:</div>
+                  <div class="col-xs-3">Year 12 - Application</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-3 bold">Date of Birth:</div>
+                  <div class="col-xs-3">15 January 1998</div>
+                  <div class="col-xs-3 bold">Gender:</div>
+                  <div class="col-xs-3">Female</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-3 bold">JPA Student ID:</div>
+                  <div class="col-xs-3">945</div>
+                  <div class="col-xs-3 bold">JPA Gradebook ID:</div>
+                  <div class="col-xs-3">1157</div>
+                </div>
+              </div>
+
+
+
+              <div class="well well-sm well-primary">
+
+                <div class="row">
+                  <div class="col-xs-3 bold">Passport Number:</div>
+                  <div class="col-xs-3">CMB253 654 697</div>
+                  <div class="col-xs-3 bold">Full Khmer Name:</div>
+                  <div class="col-xs-3">ប៊ូ ស្រីមុំ</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-3 bold">Passport Issue Date::</div>
+                  <div class="col-xs-3">15/01/2016</div>
+                  <div class="col-xs-3 bold">Passport Expiry Date:</div>
+                  <div class="col-xs-3">14/01/2026</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-3 bold">Passport Place of Issue:</div>
+                  <div class="col-xs-3">Phnom Penh, Cambodia.</div>
+                  <div class="col-xs-3 bold">Official Passport Name:</div>
+                  <div class="col-xs-3">BOO SREY MOM ប៊ូ ស្រ</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-3 bold">Parents Name:</div>
+                  <div class="col-xs-3">Father - ប៊ូ សៀឺត</div>
+                  <div class="col-xs-3 bold">Parents Name:</div>
+                  <div class="col-xs-3">Mother - ធឿន ជាdi</div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
