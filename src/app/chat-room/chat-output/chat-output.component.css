@@ -27,6 +27,7 @@ http://nicolasgallagher.com/pure-css-speech-bubbles/demo/*/
   margin-bottom: 20px;
   width: 90%;
   position: relative;
+  word-break: break-all;
 }
 .chat .chat-history .message:after {
   content: "";

@@ -8,13 +8,13 @@ import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
 
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { HomeComponent } from './home/home.component';
-import {ChatBuddyRoutingModule} from "./chat-buddy-routing.module";
+import {ChatBuddyRoutingModule} from './chat-buddy-routing.module';
 import { LobbyComponent } from './lobby/lobby/lobby.component';
 import { LoginComponent } from './facebook-auth/login/login.component';
 import { AboutComponent } from './about/about.component';
@@ -29,18 +29,6 @@ import { ChatOutputComponent } from './chat-room/chat-output/chat-output.compone
 import { ChatInputComponent } from './chat-room/chat-input/chat-input.component';
 import { TopOfSectionComponent } from './top-of-section/top-of-section.component';
 
-export const firebaseConfig = {
-  apiKey: "AIzaSyCgOyGyivcRbB4yrUOIH61PPbQpXiC-Mlk",
-  authDomain: "chatbuddy-26bfc.firebaseapp.com",
-  databaseURL: "https://chatbuddy-26bfc.firebaseio.com",
-  storageBucket: "chatbuddy-26bfc.appspot.com",
-  messagingSenderId: "805524145808"
-
-};
-export const firebarebaseLoginConfig =  {
-  provider: AuthProviders.Password,
-  method: AuthMethods.Password
-}
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +54,7 @@ export const firebarebaseLoginConfig =  {
     Angular2FontawesomeModule,
     FlexLayoutModule,
     ChatBuddyRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig, firebarebaseLoginConfig),
+    BrowserAnimationsModule,
     ResizableModule
 
   ],
