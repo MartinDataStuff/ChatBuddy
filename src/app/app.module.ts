@@ -28,6 +28,8 @@ import { ChatSettingsComponent } from './chat-room/chat-settings/chat-settings.c
 import { ChatOutputComponent } from './chat-room/chat-output/chat-output.component';
 import { ChatInputComponent } from './chat-room/chat-input/chat-input.component';
 import { TopOfSectionComponent } from './top-of-section/top-of-section.component';
+import {UserService} from "./gateway-service/user-gateway-service";
+import { UserCredentialInputComponent } from './facebook-auth/login/user-credential-input/user-credential-input.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { TopOfSectionComponent } from './top-of-section/top-of-section.component
     ChatOutputComponent,
     ChatInputComponent,
     TopOfSectionComponent,
+    UserCredentialInputComponent,
   ],
   imports: [
     AlertModule.forRoot(),
@@ -58,7 +61,7 @@ import { TopOfSectionComponent } from './top-of-section/top-of-section.component
     ResizableModule
 
   ],
-  providers: [FacebookService],
+  providers: [FacebookService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
