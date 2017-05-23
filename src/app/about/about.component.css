@@ -19,3 +19,9 @@
   border-color: rgb(53, 126, 189);
 }
 .glyphicon { margin-right:5px; }
+
+.teamMemberImg{
+  max-height: 7em;
+  max-width: 7em;
+
+}
