@@ -17,9 +17,9 @@ export class LobbyComponent implements OnInit, DoCheck{
   constructor() { }
 
   ngOnInit() {
-
   this.createMockDataLobbyAndChatRooms();
 }
+
 
   ngDoCheck(){
     this.search();

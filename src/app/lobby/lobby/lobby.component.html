@@ -1,11 +1,7 @@
 <chatbuddy-toolbar [titleofcurrentpage]="'Lobby'"></chatbuddy-toolbar>
 <chatbuddy-top-of-section [title]="'Lobby'" [briefText]="'Please pick a room to chat in'"></chatbuddy-top-of-section>
 <div ng-controller="safeCtrl">
-
-  <button type="button" ng-click="addRandomItem(row)" class="btn btn-sm btn-success">
-    <i class="glyphicon glyphicon-plus">
-    </i> Add random item
-  </button>
+  <chatbuddy-add-new-chatroom></chatbuddy-add-new-chatroom>
 
   <div class="maxWidth">
   <md-input-container class="maxWidth overflowAuto">

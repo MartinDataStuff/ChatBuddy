@@ -1,0 +1,67 @@
+<button type="button" (click)="toggleAddingRoom()" class="btn btn-lg btn-success">
+  <i class="glyphicon glyphicon-folder-close {{addingRoomIsExpanded ? 'animatedCogWheel' : 'normalCogWheel'}}">
+  </i> Add new chatroom
+</button>
+<div class="container">
+  <div *ngIf="addingRoomIsExpanded">
+  <form class="form-horizontal">
+    <fieldset>
+
+      <!-- Form Name -->
+      <legend>Creating new chat room</legend>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="nameInput">Room name</label>
+        <div class="col-md-4">
+            <input [(ngModel)]="chatRoomName" name="textinput" class="form-control" id="nameInput" type="text" placeholder="Chatroom name">
+          <span class="help-block">The name of the chatroom</span>
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="passwordInput">Privacy settings</label>
+        <div class="col-md-4">
+          <fa *ngIf="privacyEnabled" [name]="'check-square'" [size]="2" (click)="togglePrivacy()"></fa>
+          <fa *ngIf="!privacyEnabled" [name]="'square'" [size]="2" (click)="togglePrivacy()"></fa>
+            <input [(ngModel)]="chatRoomPassword" *ngIf="privacyEnabled" name="passwordInput" class="form-control" id="passwordInput" type="text" placeholder="Please enter desired password">
+          <input *ngIf="!privacyEnabled" disabled name="textinput" class="form-control" id="passwordNotEnabledInput" type="text" placeholder="Password not enabled">
+          <span class="help-block">Whether or not you need a password to access the chat room</span>
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Allow anonymous</label>
+        <div class="col-md-4">
+          <fa *ngIf="anonymousEnabled" [name]="'check-square'" [size]="2" (click)="toggleAnonymous()"></fa>
+          <fa *ngIf="!anonymousEnabled" [name]="'square'" [size]="2" (click)="toggleAnonymous()"></fa>
+          <span class="help-block">Whether or not this room allows guest users</span>
+        </div>
+      </div>
+
+      <!-- Select Basic -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="selectbasic">Select Basic</label>
+        <div class="col-md-4">
+          <select name="selectbasic" class="form-control" id="selectbasic">
+            <option value="1">Room is listed</option>
+            <option value="2">Room is unlisted (requries link to access it)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Button (Double) -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="button1id">Create room?</label>
+        <div class="col-md-8">
+          <button name="button1id" class="btn btn-success" id="button1id">Create room</button>
+          <button name="button2id" class="btn btn-danger" id="button2id" (click)="toggleAddingRoom()">Cancel</button>
+        </div>
+      </div>
+
+    </fieldset>
+  </form>
+  </div>
+</div>
