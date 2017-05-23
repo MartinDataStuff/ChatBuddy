@@ -45,7 +45,7 @@
 
 .employeeContainer:hover .overlay {
   bottom: 0%;
-  height: 35%;
+  height: 3em;
 
 }
 
