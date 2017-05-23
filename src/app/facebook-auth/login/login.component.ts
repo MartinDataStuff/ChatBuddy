@@ -9,6 +9,7 @@ import {UserService} from '../../gateway-service/user-gateway-service';
 })
 export class LoginComponent implements OnInit {
 
+  registeringUser: boolean;
   username: string;
   password: string;
   constructor(private fb: FacebookService, private us: UserService) {
@@ -21,9 +22,15 @@ export class LoginComponent implements OnInit {
     /*this.fb.init(fbParams);*/
   }
   ngOnInit() {
+    this.registeringUser = false;
+
   }
   tryToLogin(event){
 
+  }
+
+  toggleRegisteringUser(){
+    this.registeringUser = !this.registeringUser;
   }
 
 }

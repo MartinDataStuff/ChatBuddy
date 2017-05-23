@@ -31,6 +31,7 @@ import { TopOfSectionComponent } from './top-of-section/top-of-section.component
 import {UserService} from "./gateway-service/user-gateway-service";
 import { UserCredentialInputComponent } from './facebook-auth/login/user-credential-input/user-credential-input.component';
 import { AddNewChatroomComponent } from './lobby/add-new-chatroom/add-new-chatroom.component';
+import { RegisterUserComponent } from './facebook-auth/login/register-user/register-user.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { AddNewChatroomComponent } from './lobby/add-new-chatroom/add-new-chatro
     TopOfSectionComponent,
     UserCredentialInputComponent,
     AddNewChatroomComponent,
+    RegisterUserComponent,
   ],
   imports: [
     AlertModule.forRoot(),

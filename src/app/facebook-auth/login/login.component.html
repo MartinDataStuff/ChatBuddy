@@ -1,3 +1,5 @@
 <chatbuddy-toolbar [titleofcurrentpage]="'Login'"></chatbuddy-toolbar>
 <!--<chatbuddy-top-of-section [title]="' Welcome!'" [briefText]="'Please log in to chat'"></chatbuddy-top-of-section>-->
-<chatbuddy-user-credential-input></chatbuddy-user-credential-input>
+<chatbuddy-user-credential-input *ngIf="!registeringUser"></chatbuddy-user-credential-input>
+<chatbuddy-register-user *ngIf="registeringUser"></chatbuddy-register-user>
+<button (click)="toggleRegisteringUser()"> A new button</button>
