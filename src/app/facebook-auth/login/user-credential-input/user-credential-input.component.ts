@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {User} from "../../../chat-room/user";
 
 @Component({
   selector: 'chatbuddy-user-credential-input',
@@ -11,15 +12,10 @@ export class UserCredentialInputComponent implements OnInit {
 
   password: string;
 
-  @Output('usernameEmitter')
-  usernameEmitter: EventEmitter<string> = new EventEmitter<string>();
-
-  @Output('passwordEmitter')
-  passwordEmitter: EventEmitter<string> = new EventEmitter<string>();
+  @Output('userInfoEmitter')
+  userInfoEmitter: EventEmitter<User> = new EventEmitter<User>();
 
   enterCredentials() {
-    console.log('Button pressed');
-    console.log(this.username);
     if (this.username === undefined)
       return;
     if (this.username.length === 0)
@@ -29,9 +25,12 @@ export class UserCredentialInputComponent implements OnInit {
     if (this.password.length === 0)
       return;
 
-    this.usernameEmitter.emit(this.username);
+    let user = new User();
+    user.name = this.username;
+    user.password = this.password;
+    console.log('Emit begins');
+    this.userInfoEmitter.emit(user);
     console.log('After emit');
-
   }
 
   constructor() { }

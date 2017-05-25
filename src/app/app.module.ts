@@ -12,7 +12,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import {ChatBuddyRoutingModule} from './chat-buddy-routing.module';
 import { LobbyComponent } from './lobby/lobby/lobby.component';
@@ -28,10 +28,13 @@ import { ChatSettingsComponent } from './chat-room/chat-settings/chat-settings.c
 import { ChatOutputComponent } from './chat-room/chat-output/chat-output.component';
 import { ChatInputComponent } from './chat-room/chat-input/chat-input.component';
 import { TopOfSectionComponent } from './top-of-section/top-of-section.component';
-import {UserService} from "./gateway-service/user-gateway-service";
+import {UserService} from './gateway-service/user-gateway-service';
 import { UserCredentialInputComponent } from './facebook-auth/login/user-credential-input/user-credential-input.component';
 import { AddNewChatroomComponent } from './lobby/add-new-chatroom/add-new-chatroom.component';
 import { RegisterUserComponent } from './facebook-auth/login/register-user/register-user.component';
+import {AuthenticationService} from './gateway-service/authentication-service.service';
+import {AlertService} from './gateway-service/alert.service';
+import { UserProfileMiniComponent } from './chat-room/user-profile-mini/user-profile-mini.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +54,7 @@ import { RegisterUserComponent } from './facebook-auth/login/register-user/regis
     UserCredentialInputComponent,
     AddNewChatroomComponent,
     RegisterUserComponent,
+    UserProfileMiniComponent,
   ],
   imports: [
     AlertModule.forRoot(),
@@ -65,7 +69,11 @@ import { RegisterUserComponent } from './facebook-auth/login/register-user/regis
     ResizableModule
 
   ],
-  providers: [FacebookService, UserService],
+  providers: [
+    FacebookService,
+    UserService,
+    AuthenticationService,
+    AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

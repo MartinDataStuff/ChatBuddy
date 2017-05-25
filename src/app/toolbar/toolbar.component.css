@@ -11,3 +11,27 @@
 .fill-remaining-space {
   flex: 1 1 auto;
 }
+
+.purpleBackground1{
+  background: mediumpurple;
+}
+
+.purpleBackground2{
+  background: blueviolet;
+}
+
+.menuIcon{
+  text-align: center;
+  width: auto;
+  display:inline-block;
+}
+
+.menuIconDivider{
+  width:40%;
+  display:inline-block;
+}
+
+.menuText{
+  text-align: center;
+
+}

@@ -1,0 +1,8 @@
+.blueBackground{
+  background: #358CCE;
+}
+
+.capSize{
+  max-height: 15em;
+  overflow-y: scroll;
+}
