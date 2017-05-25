@@ -5,8 +5,8 @@ import {User} from '../../chat-room/user';
 import {AuthenticationService} from '../../gateway-service/authentication-service.service';
 import {Router} from '@angular/router';
 import {AlertService} from '../../gateway-service/alert.service';
-import {Subscription} from "rxjs/Subscription";
-import {ChatBuddyRoutingModule} from "../../chat-buddy-routing.module";
+import {Subscription} from 'rxjs/Subscription';
+import {ChatBuddyRoutingModule} from '../../chat-buddy-routing.module';
 
 @Component({
   selector: 'chatbuddy-login',
@@ -48,13 +48,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   tryToLogin(event){
-
-    //let user = <User>event;
-
     console.log('TryToLogin activated');
-    console.log(event);
-   // console.log("received password:"+user.password);
-    //console.log(this.as.readAllTest().subscribe(posts => this.testPosts = posts));
     this.login(event.name, event.password);
   }
 
@@ -65,7 +59,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
     this.UsersOwnAPIObservable = this.as.login(username, password).subscribe(
           data => {
-            console.log("Login was succesfull, now routing");
+            console.log('Login was succesfull, now routing');
             this.router.navigate(['/lobby']);
           },
            error => {
@@ -75,7 +69,36 @@ export class LoginComponent implements OnInit, OnDestroy {
     );
   }
 
+  tryToRegister(event){
+    console.log('TryToRegister activated');
+    this.register(event.name, event.password, event.name, event.picture, event.role);
+  }
+
+  register(
+    username: string,
+    password: string,
+    name: string,
+    picture: string,
+    role: string) {
+    this.loading = true;
+    if (this.UsersOwnAPIObservable) //cancel existing request if it is there.
+      this.UsersOwnAPIObservable.unsubscribe();
+
+    this.UsersOwnAPIObservable = this.as.register(name, password, name, picture, role).subscribe(
+      data => {
+        console.log('Registration was succesfull');
+        this.loading = false;
+        this.registeringUser = false;
+      },
+      error => {
+        this.alertService.error(error._body);
+        this.loading = false;
+      }
+    );
+  }
+
   toggleRegisteringUser(){
+    // Toggle whether the registration or login window is displayed.
     this.registeringUser = !this.registeringUser;
   }
 

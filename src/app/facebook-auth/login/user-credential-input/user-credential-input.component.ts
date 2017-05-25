@@ -28,9 +28,7 @@ export class UserCredentialInputComponent implements OnInit {
     let user = new User();
     user.name = this.username;
     user.password = this.password;
-    console.log('Emit begins');
     this.userInfoEmitter.emit(user);
-    console.log('After emit');
   }
 
   constructor() { }

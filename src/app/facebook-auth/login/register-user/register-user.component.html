@@ -12,17 +12,28 @@
 
         </div>
         <div class="panel-body">
-          <form accept-charset="UTF-8" role="form" class="form-signin">
             <fieldset>
               <label class="panel-login">
                 <div class="login_result"></div>
               </label>
-              <input class="form-control" placeholder="Username" id="username" type="text">
-              <input class="form-control" placeholder="Password" id="password" type="password">
+              <input [(ngModel)]="email" class="form-control" placeholder="Email" id="username" type="text">
+              <span *ngIf="!usernameApproved && email && email.length > 0" class="help-block">Email not found, too short<br>or doesn't contain '@' sign</span>
+              <span *ngIf="usernameApproved && email && email.length > 0" class="help-block">Email accepted</span>
               <br>
-              <input class="btn btn-lg btn-success btn-block" type="submit" id="register" value="Register »">
+              <input [(ngModel)]="password" class="form-control" placeholder="Password" id="password" type="password">
+              <span *ngIf="!passwordApproved && password && password.length > 0" class="help-block">Password must be 7 or more characters long</span>
+              <span *ngIf="passwordApproved && password && password.length > 0" class="help-block">Password accepted</span>
+              <br>
+              <input [(ngModel)]="picture" class="form-control" placeholder="Picture URL" id="profilePicURL" type="text">
+              <span *ngIf="!pictureApproved && picture && picture.length > 0" class="help-block">Picture not found or URL too short</span>
+              <span *ngIf="pictureApproved && picture && picture.length > 0" class="help-block">Picture URL accepted</span>
+              <br>
+              <input [(ngModel)]="name" class="form-control" placeholder="Name" id="name" type="text">
+              <span *ngIf="!nameApproved && name && name.length > 0" class="help-block">Name not found or too short</span>
+              <span *ngIf="nameApproved && name && name.length > 0" class="help-block">Name accepted</span>
+              <br>
+              <input class="btn btn-lg btn-success btn-block" (click)="enterCredentials()" type="submit" id="register" value="Register »">
             </fieldset>
-          </form>
         </div>
       </div>
     </div>
