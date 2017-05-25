@@ -35,6 +35,7 @@ import { RegisterUserComponent } from './facebook-auth/login/register-user/regis
 import {AuthenticationService} from './gateway-service/authentication-service.service';
 import {AlertService} from './gateway-service/alert.service';
 import { UserProfileMiniComponent } from './chat-room/user-profile-mini/user-profile-mini.component';
+import {AuthGuard} from "./facebook-auth/auth-guard";
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { UserProfileMiniComponent } from './chat-room/user-profile-mini/user-pro
     FacebookService,
     UserService,
     AuthenticationService,
+    AuthGuard,
     AlertService],
   bootstrap: [AppComponent]
 })

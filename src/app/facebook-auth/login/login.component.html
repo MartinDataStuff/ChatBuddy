@@ -2,9 +2,8 @@
 <!--<chatbuddy-top-of-section [title]="' Welcome!'" [briefText]="'Please log in to chat'"></chatbuddy-top-of-section>-->
 <chatbuddy-user-credential-input (userInfoEmitter)="tryToLogin($event)" *ngIf="!registeringUser"></chatbuddy-user-credential-input>
 <chatbuddy-register-user *ngIf="registeringUser"></chatbuddy-register-user>
-
-<button (click)="toggleRegisteringUser()"> A new button</button>
-
-
+<div class="newUserText">
+<md-button-toggle (click)="toggleRegisteringUser()">New user? Click here to register!</md-button-toggle>
+</div>
 <!--<chatbuddy-chat-output [chatMessages]="this.chatRoom.messagesInRoom" [currentUser]="currentUser"></chatbuddy-chat-output>-->
 <!--<chatbuddy-chat-input (chatOutput)="forwardChatOutput($event)"></chatbuddy-chat-input>-->

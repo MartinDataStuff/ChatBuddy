@@ -9,11 +9,11 @@
     <fa [name]="'bars'" [size]="2"></fa>
   </button>
   <md-menu #menu="mdMenu" class="menuIcon purpleBackground1">
-    <h3 class="menuText purpleBackground2">ChatBuddy</h3>
+    <div><h3 class="center purpleBackground2">ChatBuddy</h3></div>
     <chatbuddy-user-profile-mini [user]="currentUser"></chatbuddy-user-profile-mini>
-    <div class="menuIconDivider"></div>
+    <div class="center">
     <fa class="menuIcon" [name]="'users'" [size]="1"></fa>
-    <div class="menuIconColorSpace"></div>
+    </div>
     <button class="purpleBackground1" md-menu-item routerLink="/login">
       <fa [name]="'sign-in'"></fa>
       <span>Login</span>

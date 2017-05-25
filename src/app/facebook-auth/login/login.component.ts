@@ -69,16 +69,7 @@ export class LoginComponent implements OnInit, OnDestroy {
              this.alertService.error(error._body);
              this.loading = false;
            }
-    );//user => this.usersOwnAPI = user
-    // this.as.login(username, password)
-    //   .subscribe(
-    //     data => {
-    //       this.router.navigate([this.returnUrl]);
-    //     },
-    //      error => {
-    //      this.alertService.error(error._body);
-    //       this.loading = false;
-    //     });
+    );
   }
 
   toggleRegisteringUser(){

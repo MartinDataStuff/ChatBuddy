@@ -20,18 +20,12 @@
   background: blueviolet;
 }
 
-.menuIcon{
-  text-align: center;
-  width: auto;
-  display:inline-block;
-}
-
 .menuIconDivider{
   width:40%;
   display:inline-block;
 }
 
-.menuText{
+.center{
   text-align: center;
 
 }
