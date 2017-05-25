@@ -1,9 +1,16 @@
 <chatbuddy-toolbar [titleofcurrentpage]="'Login'"></chatbuddy-toolbar>
+<div *ngIf="!loading">
 <!--<chatbuddy-top-of-section [title]="' Welcome!'" [briefText]="'Please log in to chat'"></chatbuddy-top-of-section>-->
 <chatbuddy-user-credential-input (userInfoEmitter)="tryToLogin($event)" *ngIf="!registeringUser"></chatbuddy-user-credential-input>
 <chatbuddy-register-user *ngIf="registeringUser"></chatbuddy-register-user>
 <div class="newUserText">
-<md-button-toggle (click)="toggleRegisteringUser()">New user? Click here to register!</md-button-toggle>
+<md-button-toggle *ngIf="!registeringUser" (click)="toggleRegisteringUser()">New user? Click here to register!</md-button-toggle>
+  <md-button-toggle *ngIf="registeringUser" (click)="toggleRegisteringUser()">Already have a user? Click here to login!</md-button-toggle>
+</div>
+</div>
+<div class="spinner">
+  <h1>Loading...</h1>
+<md-spinner class="spinner" *ngIf="loading"></md-spinner>
 </div>
 <!--<chatbuddy-chat-output [chatMessages]="this.chatRoom.messagesInRoom" [currentUser]="currentUser"></chatbuddy-chat-output>-->
 <!--<chatbuddy-chat-input (chatOutput)="forwardChatOutput($event)"></chatbuddy-chat-input>-->

@@ -60,7 +60,10 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   login(username: string, password: string) {
     this.loading = true;
-    this.UsersOwnAPIObservable = this.as.login('alex@email.com', 'Alex123').subscribe(
+    if (this.UsersOwnAPIObservable) //cancel existing request if it is there.
+      this.UsersOwnAPIObservable.unsubscribe();
+
+    this.UsersOwnAPIObservable = this.as.login(username, password).subscribe(
           data => {
             console.log("Login was succesfull, now routing");
             this.router.navigate(['/lobby']);
